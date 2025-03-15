@@ -78,12 +78,14 @@ st.subheader(" Generate Math Exercise for practice 🤖 ")
 Math_topic = st.selectbox("Choose a topic for the tweet:", ["Percentage", "LCM", "HCF"])
 st.write("You selected:", Math_topic)
 
+Math_Q = None
+response = None
 if st.button("Generate"):
     Math_Q = Math_chain.invoke({"Math_topic" : Math_topic})
     response = Math_Q.content
-    st.write(response)
+    #st.write(response)
 
-"""
+
 ############### Extracting the Problem, Answer and Explanation ###############
 # Split the response into parts 
 parts = response.strip().split("\n\n")
@@ -105,4 +107,4 @@ st.write("Explanation:", explanation)
     #st.write(Math_Q.content)
 
 
-"""
+
