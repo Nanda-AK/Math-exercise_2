@@ -81,7 +81,10 @@ st.write("You selected:", Math_topic)
 if st.button("Generate"):
     Math_Q = Math_chain.invoke({"Math_topic" : Math_topic})
     response = Math_Q.content
-    
+
+st.write(response)
+
+"""
 ############### Extracting the Problem, Answer and Explanation ###############
 # Split the response into parts 
 parts = response.strip().split("\n\n")
@@ -103,4 +106,4 @@ st.write("Explanation:", explanation)
     #st.write(Math_Q.content)
 
 
-
+"""
