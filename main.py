@@ -83,29 +83,25 @@ response = None
 if st.button("Generate"):
     Math_Q = Math_chain.invoke({"Math_topic" : Math_topic})
     response = Math_Q.content
-    #st.write(response)
-
-st.write(response)
-"""
-############### Extracting the Problem, Answer and Explanation ###############
-# Split the response into parts 
-parts = response.strip().split("\n\n")
-
-# Extract the question
-question = parts[0].split("Problem:")[1].strip()
-
-# Extract the answer
-answer = parts[1].split("Answer:")[1].strip()
-
-# Extract the explanation
-explanation = parts[2].strip()
-
-# Print the extracted information
-st.write("Question:", question)
-st.write("Answer:", answer)
-st.write("Explanation:", explanation)
     
+    ############### Extracting the Problem, Answer and Explanation ###############
+    # Split the response into parts 
+    parts = response.strip().split("\n\n")
+    
+    # Extract the question
+    question = parts[0].split("Problem:")[1].strip()
+    
+    # Extract the answer
+    answer = parts[1].split("Answer:")[1].strip()
+    
+    # Extract the explanation
+    explanation = parts[2].strip()
+    
+    # Print the extracted information
+    st.write("Question:", question)
+    st.write("Answer:", answer)
+    st.write("Explanation:", explanation)
+        
     #st.write(Math_Q.content)
-"""
 
 
