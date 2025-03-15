@@ -119,5 +119,5 @@ question, answer, explanation = extract_qa_explanation(response)
 
 # Now you can use the extracted question, answer, and explanation variables
 st.write("Question:", question)
-st.write("Answer:", answer)
-st.write("Explanation:", explanation)
+#st.write("Answer:", answer)
+#st.write("Explanation:", explanation)
