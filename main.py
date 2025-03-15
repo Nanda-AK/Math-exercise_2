@@ -83,7 +83,7 @@ response = None
 if st.button("Generate"):
     Math_Q = Math_chain.invoke({"Math_topic" : Math_topic})
     response = Math_Q.content
-    st.write(response)
+    #st.write(response)
 
 st.write(response)
 """
