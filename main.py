@@ -118,6 +118,9 @@ response = Math_Q.content
 question, answer, explanation = extract_qa_explanation(response)
 
 # Now you can use the extracted question, answer, and explanation variables
+st.write("##################################")
 st.write("Question:", question)
-#st.write("Answer:", answer)
-#st.write("Explanation:", explanation)
+st.write("##################################")
+st.write("Answer:", answer)
+st.write("##################################")
+st.write("Explanation:", explanation)
