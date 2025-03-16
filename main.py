@@ -39,7 +39,7 @@ def extract_qa_explanation(response):
     explanation = explanation_match.group(1).strip() if explanation_match else None
 
     #Convert the choice string to Dict
-    choice = eval(choice)
+    choice = dict(choice)
     
     return question, choice, answer, explanation
 
