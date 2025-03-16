@@ -127,12 +127,17 @@ response = Math_Q.content
 question, choice, answer, explanation = extract_qa_explanation(response)
 
 # Now you can use the extracted question, answer, and explanation variables
-st.write("##################################")
-st.write("Question:", question)
+#st.write("##################################")
+#st.write("Question:", question)
 st.write("##################################")
 st.write("choice:", choice)
 st.write(f"Type of Chice Veriable : {type(choice)}")
 st.write("##################################")
-st.write("Answer:", answer)
-st.write("##################################")
-st.write("Explanation:", explanation)
+choice_1 = dict(choice)
+st.write("choice_1):", choice_1)
+st.write(f"Type of Chice_1 Veriable : {type(choice_1)}")
+
+#st.write("##################################")
+#st.write("Answer:", answer)
+#st.write("##################################")
+#st.write("Explanation:", explanation)
