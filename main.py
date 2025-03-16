@@ -53,9 +53,9 @@ Questions Begin:
 Find the least common multiple (LCM) of 12 and 18.
 Questions End:
 choice Begin:
-"a": 6 
-"b": 36 
-"c": 72 
+"a": 6, 
+"b": 36, 
+"c": 72,
 "d": 216
 choice Begin:
 
@@ -81,11 +81,9 @@ Explanation End:
 Questions Begin:
 Sarah bought a bicycle that was originally priced at $250. She received a 15% discount. How much did Sarah pay for the bicycle?
 
-"a": 187.50
-"b": 187.50
-"b": 212.50 
-"c": 37.50
-"d": 37.50
+"a": 187.50,
+"b": 186.50,
+"c": 37.50,
 "d": 287.50
 Questions End:
 
