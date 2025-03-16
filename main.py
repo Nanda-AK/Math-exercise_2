@@ -5,6 +5,7 @@ from langchain import PromptTemplate
 import streamlit as st
 import os
 import re
+import json
 
 os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
@@ -59,7 +60,7 @@ Find the least common multiple (LCM) of 12 and 18.
 Questions End:
 
 choice Begin:
-[('a', 6), ('b', 36), ('c', 72), ('d', 216)]
+{('a', 6), ('b', 36), ('c', 72), ('d', 216)}
 choice End:
 
 Answer Begin:
@@ -86,7 +87,7 @@ Sarah bought a bicycle that was originally priced at $250. She received a 15% di
 Questions End:
 
 choice Begin:
-[('a', 186.50), ('b', 184), ('c', 37.50), ('d', 216)]
+{('a', 186.50), ('b', 184), ('c', 37.50), ('d', 216)}
 choice End:
 
 Answer Begin: a) $187.50 Answer End:
@@ -133,7 +134,7 @@ st.write("##################################")
 st.write("choice:", choice)
 st.write(f"Type of Chice Veriable : {type(choice)}")
 st.write("##################################")
-choice_1 = dict(choice)
+choice_1 = json.loads(choice)
 st.write("choice_1):", choice_1)
 st.write(f"Type of Chice_1 Veriable : {type(choice_1)}")
 
