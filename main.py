@@ -40,7 +40,7 @@ def extract_qa_explanation(response):
 
     print(f"Variable choice = {choice}  {type(choice)}")
     #Convert the choice string to Dict
-    choice = dict(choice)
+    #choice = dict(choice)
     
     return question, choice, answer, explanation
 
