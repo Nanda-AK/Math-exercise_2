@@ -33,10 +33,13 @@ def extract_qa_explanation(response):
 
     # Extract and clean the matched sections
     question = question_match.group(1).strip() if question_match else None
-    choice = choice_match.group(1).strip() if choice_match else None
+    choice_str = choice_match.group(1).strip() if choice_match else None
     answer = answer_match.group(1).strip() if answer_match else None
     explanation = explanation_match.group(1).strip() if explanation_match else None
 
+    #Convert the choice string to Dict
+    choice = eval(choice_str)
+    
     return question, choice, answer, explanation
 
 # Initializing Google Gemini AI Model 
@@ -127,7 +130,7 @@ question, choice, answer, explanation = extract_qa_explanation(response)
 st.write("##################################")
 st.write("Question:", question)
 st.write("##################################")
-st.write("Question:", choice)
+st.write("choice:", choice)
 st.write(f"Type of Chice Veriable : {type(choice)}")
 st.write("##################################")
 st.write("Answer:", answer)
