@@ -21,20 +21,23 @@ def extract_qa_explanation(response):
 
     # Define regex patterns for question, answer, and explanation sections
     question_pattern = r"Questions Begin:(.*?)Questions End:"
+    choice_pattern = r"choice Begin:(.*?)choice End:"
     answer_pattern = r"Answer Begin:(.*?)Answer End:"
     explanation_pattern = r"Explanation Begin:(.*?)Explanation End:"
-
+    
     # Search for patterns in the response
     question_match = re.search(question_pattern, response, re.DOTALL)
+    choice_match = re.search(choice_pattern, response, re.DOTALL)
     answer_match = re.search(answer_pattern, response, re.DOTALL)
     explanation_match = re.search(explanation_pattern, response, re.DOTALL)
 
     # Extract and clean the matched sections
     question = question_match.group(1).strip() if question_match else None
+    choice = choice_match.group(1).strip() if choice_match else None
     answer = answer_match.group(1).strip() if answer_match else None
     explanation = explanation_match.group(1).strip() if explanation_match else None
 
-    return question, answer, explanation
+    return question, choice, answer, explanation
 
 # Initializing Google Gemini AI Model 
 gemini_model = ChatGoogleGenerativeAI(model = "gemini-1.5-flash-latest")
@@ -48,13 +51,17 @@ Format e.g.:
 
 Questions Begin:
 Find the least common multiple (LCM) of 12 and 18.
+Questions End:
+choice Begin:
 (a) 6 
 (b) 36 
 (c) 72 
 (d) 216
-Questions End:
+choice Begin:
 
-Answer Begin:(b) 36 Answer End:
+Answer Begin:
+(b) 36 
+Answer End:
 
 Explanation Begin:
 There are two main ways to find the LCM of 12 and 18:
@@ -67,7 +74,8 @@ Method 2: Prime Factorization
 Find the prime factorization of each number: 12 = 2 x 2 x 3 = 2² x 3 18 = 2 x 3 x 3 = 2 x 3²
 Identify the highest power of each prime factor present in either factorization: The highest power of 2 is 2² = 4 The highest power of 3 is 3² = 9
 Multiply these highest powers together: 2² x 3² = 4 x 9 = 36
-Therefore, the LCM of 12 and 18 is 36. Explanation End:
+Therefore, the LCM of 12 and 18 is 36. 
+Explanation End:
 
 
 Questions Begin:
@@ -115,11 +123,13 @@ response = Math_Q.content
 #print(f"##################\n\n Resond from LLM is \n\n {response} \n\n\n ##################")
 
 # Extracting Question, Answer and explanation 
-question, answer, explanation = extract_qa_explanation(response)
+question, choice, answer, explanation = extract_qa_explanation(response)
 
 # Now you can use the extracted question, answer, and explanation variables
 st.write("##################################")
 st.write("Question:", question)
+st.write("##################################")
+st.write("Question:", choice)
 st.write("##################################")
 st.write("Answer:", answer)
 st.write("##################################")
