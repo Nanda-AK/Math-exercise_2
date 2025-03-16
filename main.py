@@ -38,6 +38,7 @@ def extract_qa_explanation(response):
     answer = answer_match.group(1).strip() if answer_match else None
     explanation = explanation_match.group(1).strip() if explanation_match else None
 
+    print(f"Variable choice = {choice}  {type(choice)}")
     #Convert the choice string to Dict
     choice = dict(choice)
     
