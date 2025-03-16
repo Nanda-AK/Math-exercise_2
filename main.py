@@ -58,10 +58,10 @@ Find the least common multiple (LCM) of 12 and 18.
 Questions End:
 
 choice Begin:
-{"a": 6, 
+"a": 6, 
 "b": 36, 
 "c": 72,
-"d": 216}
+"d": 216
 choice End:
 
 Answer Begin:
@@ -94,7 +94,6 @@ choice Begin:
 "d": 287.50}
 choice End:
 
-
 Answer Begin: a) $187.50 Answer End:
 
 Explanation Begin::
@@ -102,7 +101,8 @@ To find the discount amount, calculate 15% of $250:
 15% of 250 = (15/100)∗250 = $37.50
 This means the discount was $37.50. To find the final price Sarah paid, subtract the discount from the original price:
 250−37.50 = $187.50
-Therefore, Sarah paid $187.50 for the bicycle. Explanation End:
+Therefore, Sarah paid $187.50 for the bicycle. 
+Explanation End:
 """
 # Defining Math Prompt with Prompt Template 
 Math_prompt = PromptTemplate(template = Math_template, input_variables =['Math_topic'])
