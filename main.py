@@ -33,13 +33,13 @@ def extract_qa_explanation(response):
 
     # Extract and clean the matched sections
     question = question_match.group(1).strip() if question_match else None
-    #choice_str = choice_match.group(1).strip() if choice_match else None
-    choice = choice_match.group(1).strip() if choice_match else None
+    choice_str = choice_match.group(1).strip() if choice_match else None
+    #choice = choice_match.group(1).strip() if choice_match else None
     answer = answer_match.group(1).strip() if answer_match else None
     explanation = explanation_match.group(1).strip() if explanation_match else None
 
     #Convert the choice string to Dict
-    #choice = eval(choice_str)
+    choice = eval(choice_str)
     
     return question, choice, answer, explanation
 
