@@ -33,7 +33,7 @@ def extract_qa_explanation(response):
 
     # Extract and clean the matched sections
     question = question_match.group(1).strip() if question_match else None
-    choice_str = choice_match.group(1).strip() if choice_match else None
+    #choice_str = choice_match.group(1).strip() if choice_match else None
     choice = choice_match.group(1).strip() if choice_match else None
     answer = answer_match.group(1).strip() if answer_match else None
     explanation = explanation_match.group(1).strip() if explanation_match else None
@@ -88,10 +88,10 @@ Sarah bought a bicycle that was originally priced at $250. She received a 15% di
 Questions End:
 
 choice Begin:
-{"a": 187.50,
+"a": 187.50,
 "b": 186.50,
 "c": 37.50,
-"d": 287.50}
+"d": 287.50
 choice End:
 
 Answer Begin: a) $187.50 Answer End:
