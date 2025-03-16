@@ -58,10 +58,10 @@ Find the least common multiple (LCM) of 12 and 18.
 Questions End:
 
 choice Begin:
-"a": 6, 
+{"a": 6, 
 "b": 36, 
 "c": 72,
-"d": 216
+"d": 216}
 choice End:
 
 Answer Begin:
@@ -88,10 +88,10 @@ Sarah bought a bicycle that was originally priced at $250. She received a 15% di
 Questions End:
 
 choice Begin:
-"a": 187.50,
+{"a": 187.50,
 "b": 186.50,
 "c": 37.50,
-"d": 287.50
+"d": 287.50}
 choice End:
 
 Answer Begin: a) $187.50 Answer End:
