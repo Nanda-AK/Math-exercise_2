@@ -54,14 +54,14 @@ if st.button("Generate"):
     llm_response = structured_llm.invoke("Provide a math percentage Problem")
     st.write(llm_response["Question"])
 
-options = [
-    f"A) {llm_response['A']}",
-    f"B) {llm_response['B']}",
-    f"C) {llm_response['C']}",
-    f"D) {llm_response['D']}"
-]
-    
-answer = st.radio("Select one option:", options, index=None)
+    options = [
+        f"A) {llm_response['A']}",
+        f"B) {llm_response['B']}",
+        f"C) {llm_response['C']}",
+        f"D) {llm_response['D']}"
+    ]
+        
+    answer = st.radio("Select one option:", options, index=None)
 
 if st.button("Submit Answer"):
     if answer==llm_response["Correct_Ans"]:
