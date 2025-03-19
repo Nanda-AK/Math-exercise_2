@@ -81,7 +81,7 @@ if st.session_state.llm_response:
 # Submit answer button
 st.write(st.session_state.selected_answer)
 st.write(st.session_state.llm_response['Correct_Ans'])
-st.write(answer_radio)
+#st.write(answer_radio)
 
 if st.button("Submit Answer"):
     if not st.session_state.llm_response:
