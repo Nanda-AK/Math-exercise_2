@@ -78,11 +78,6 @@ if st.session_state.llm_response:
         "Select one option:", options, index=None, key="answer_radio"
     )
 
-# Submit answer button
-#st.write(st.session_state.selected_answer)
-#st.write(st.session_state.llm_response['Correct_Ans'])
-#st.write(llm_response['Correct_Ans'])
-#st.write(st.session_state.answer_radio.split(")")[0])
 
 if st.button("Submit Answer"):
     if not st.session_state.llm_response:
@@ -93,45 +88,3 @@ if st.button("Submit Answer"):
          st.success(f"✅ Correct! You selected: {st.session_state.selected_answer}")
     else:
         st.error(f"❌ Incorrect! The correct answer is {st.session_state.llm_response['Correct_Ans']}.")
-
-
-
-
-
-
-
-
-
-"""
-if st.button("Generate Question"):
-    llm_response = structured_llm.invoke("Provide a math percentage Problem")
-    st.write(llm_response["Question"])
-
-    options = [
-        f"A) {llm_response['A']}",
-        f"B) {llm_response['B']}",
-        f"C) {llm_response['C']}",
-        f"D) {llm_response['D']}"
-    ]
-        
-    #answer = st.radio("Select one option:", options, index=None)
-    st.session_state.answer = st.radio("Select one option:", options, index=None)
-# Button to submit the answer
-if st.button("Submit Answer"):
-    if not st.session_state.llm_response:
-        st.warning("⚠️ Please generate a question first!")
-    elif not st.session_state.answer:
-        st.warning("⚠️ Please select an option before submitting.")
-    elif st.session_state.answer == f"{st.session_state.llm_response['Correct_Ans']}":
-        st.success(f"✅ Correct! You selected: {st.session_state.answer}")
-    else:
-        st.error(f"❌ Incorrect! The correct answer is {st.session_state.llm_response['Correct_Ans']}.")
-""" 
-
-"""
-if st.button("Submit Answer"):
-    if answer==llm_response["Correct_Ans"]:
-        st.success(f"✅ You selected: {answer}")
-    else:
-        st.warning("⚠️ Please select an option before submitting.")
-"""
