@@ -58,7 +58,7 @@ if "selected_answer" not in st.session_state:
 
 # Generate question when button is clicked
 if st.button("Generate"):
-    structured_llm = ...  # Define your LLM model here
+    #structured_llm = ...  # Define your LLM model here
     st.session_state.llm_response = structured_llm.invoke("Provide a math percentage Problem")
 
 # Display the question and answer choices if a question has been generated
