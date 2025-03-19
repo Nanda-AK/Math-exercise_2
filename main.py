@@ -51,4 +51,4 @@ if st.button("Generate"):
     #Math_Q = Math_chain.invoke({"Math_topic" : Math_topic})
     #st.write(Math_Q.content)
     llm_response = structured_llm.invoke("Provide a math percentage Problem")
-    st.write(llm_response["Question"]
+    st.write(llm_response["Question"])
