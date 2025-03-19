@@ -19,25 +19,19 @@ os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 llm = init_chat_model("gpt-4o-mini", model_provider="openai")
 
 # TypedDict
-class Joke(TypedDict):
+class Math_QA(TypedDict):
     """Math problem for Grade 6th student"""
 
     Question: Annotated[str, ..., "Simple Math question on persentage problem"]
-
-    #Answers: Annotated[str, ..., "Provide 4 answer in MCQ"]
-    #Answers: Annotated[list[str, str],...,"Provide 4 answer in MCQ"] Working
     A: Annotated[str,..., "Provide Option A answer"]
     B: Annotated[str,..., "Provide Option B Answer"]
     C: Annotated[str,..., "Provide Option C Answer"]
     D: Annotated[str,..., "Provide Option D Answer"]
-    #Explanation: Annotated[str, ..., "Explain the answer"
     Correct_Ans: Annotated[str,...,"Answer amound A, B, C, D"]
     Explanation: Annotated[str, ..., "Explain the answer in Kids frindly and easy way"]
-    #rating: Annotated[Optional[int], None, "How funny the joke is, from 1 to 10"]
 
-structured_llm = llm.with_structured_output(Joke)
+structured_llm = llm.with_structured_output(Math_QA)
 
-#llm_response = structured_llm.invoke("Provide a math percentage Problem")
 
 
 ### Streamlit ###
