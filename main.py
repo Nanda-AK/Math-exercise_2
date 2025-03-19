@@ -34,7 +34,7 @@ st.subheader(" Generate Math Exercise for practice 🤖 ")
 
 #Continue = "True" 
 #while Continue == "True":
-    Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Percentage", "LCM", "HCF", "Division", "Long Division"])
+Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Percentage", "LCM", "HCF", "Division", "Long Division"])
     #st.write("You selected:", Math_topic)
     
     
