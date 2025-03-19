@@ -36,7 +36,7 @@ st.header(" Math Exercise ")
 st.subheader(" Generate Math Exercise for practice 🤖 ")
 
 Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Percentage", "LCM", "HCF"])
-st.write("You selected:", Math_topic)
+#st.write("You selected:", Math_topic)
 
 
 #============================
@@ -48,7 +48,7 @@ if "selected_answer" not in st.session_state:
     st.session_state.selected_answer = None
 
 # Generate question when button is clicked
-if st.button("Generate Math Problem"):
+if st.button(f"Generate {Math_topic} Math Problem"):
     st.session_state.llm_response = structured_llm.invoke(f"Provide a math {Math_topic} Problem and provide simple step by step explanation to solve problem.")
 
 # Display the question and answer choices if a question has been generated
