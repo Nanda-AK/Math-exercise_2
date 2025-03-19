@@ -55,10 +55,10 @@ if st.button("Generate"):
     st.write(llm_response["Question"])
 
 options = [
-f"A) {llm_response['A']}",
-f"B) {llm_response['B']}",
-f"C) {llm_response['C']}",
-f"D) {llm_response['D']}"
+    f"A) {llm_response['A']}",
+    f"B) {llm_response['B']}",
+    f"C) {llm_response['C']}",
+    f"D) {llm_response['D']}"
 ]
     
 answer = st.radio("Select one option:", options, index=None)
