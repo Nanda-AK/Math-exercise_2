@@ -32,9 +32,7 @@ structured_llm = llm.with_structured_output(Math_QA)
 st.header(" Math Exercise ")
 st.subheader(" Generate Math Exercise for practice 🤖 ")
 
-Continue = "True" 
-while Continue == "True":
-    print("After While loop")
+
     Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Percentage", "LCM", "HCF", "Division", "Long Division"])    
     
     #============================
