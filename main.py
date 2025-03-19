@@ -49,8 +49,6 @@ Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Perce
 st.write("You selected:", Math_topic)
 
 if st.button("Generate"):
-    #Math_Q = Math_chain.invoke({"Math_topic" : Math_topic})
-    #st.write(Math_Q.content)
     llm_response = structured_llm.invoke("Provide a math percentage Problem")
     st.write(llm_response["Question"])
 
@@ -61,10 +59,23 @@ if st.button("Generate"):
         f"D) {llm_response['D']}"
     ]
         
-    answer = st.radio("Select one option:", options, index=None)
+    #answer = st.radio("Select one option:", options, index=None)
+    st.session_state.answer = st.radio("Select one option:", options, index=None)
+# Button to submit the answer
+if st.button("Submit Answer"):
+    if not st.session_state.llm_response:
+        st.warning("⚠️ Please generate a question first!")
+    elif not st.session_state.answer:
+        st.warning("⚠️ Please select an option before submitting.")
+    elif st.session_state.answer == f"{st.session_state.llm_response['Correct_Ans']}":
+        st.success(f"✅ Correct! You selected: {st.session_state.answer}")
+    else:
+        st.error(f"❌ Incorrect! The correct answer is {st.session_state.llm_response['Correct_Ans']}.")
 
+"""
 if st.button("Submit Answer"):
     if answer==llm_response["Correct_Ans"]:
         st.success(f"✅ You selected: {answer}")
     else:
         st.warning("⚠️ Please select an option before submitting.")
+"""
