@@ -26,10 +26,10 @@ class Joke(TypedDict):
 
     #Answers: Annotated[str, ..., "Provide 4 answer in MCQ"]
     #Answers: Annotated[list[str, str],...,"Provide 4 answer in MCQ"] Working
-    A: Annotated[str,..., "Provide 4 answer in this format A: Option1 B: Option2 C: Option3 D: Option4"]
-    B: Annotated[str,..., "Provide 4 answer in this format A: Option1 B: Option2 C: Option3 D: Option4"]
-    C: Annotated[str,..., "Provide 4 answer in this format A: Option1 B: Option2 C: Option3 D: Option4"]
-    D: Annotated[str,..., "Provide 4 answer in this format A: Option1 B: Option2 C: Option3 D: Option4"]
+    A: Annotated[str,..., "Provide Option A answer"]
+    B: Annotated[str,..., "Provide Option B Answer"]
+    C: Annotated[str,..., "Provide Option C Answer"]
+    D: Annotated[str,..., "Provide Option D Answer"]
     #Explanation: Annotated[str, ..., "Explain the answer"
     Explanation: Annotated[str, ..., "Explain the answer in Kids frindly and easy way"]
     #rating: Annotated[Optional[int], None, "How funny the joke is, from 1 to 10"]
