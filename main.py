@@ -63,8 +63,8 @@ if st.button("Generate"):
     
     answer = st.radio("Select one option:", options, index=None)
 
-if st.button("Submit Answer"):
-    if answer==llm_response["Correct_Ans"]:
-        st.success(f"✅ You selected: {answer}")
-    else:
-        st.warning("⚠️ Please select an option before submitting.")
+    if st.button("Submit Answer"):
+        if answer==llm_response["Correct_Ans"]:
+            st.success(f"✅ You selected: {answer}")
+        else:
+            st.warning("⚠️ Please select an option before submitting.")
