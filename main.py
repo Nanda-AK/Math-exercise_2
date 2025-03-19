@@ -31,6 +31,7 @@ class Joke(TypedDict):
     C: Annotated[str,..., "Provide Option C Answer"]
     D: Annotated[str,..., "Provide Option D Answer"]
     #Explanation: Annotated[str, ..., "Explain the answer"
+    Correct_Ans: Annotated[str,...,"Answer amound A, B, C, D"]
     Explanation: Annotated[str, ..., "Explain the answer in Kids frindly and easy way"]
     #rating: Annotated[Optional[int], None, "How funny the joke is, from 1 to 10"]
 
@@ -60,10 +61,10 @@ if st.button("Generate"):
     f"D) {llm_response['D']}"
     ]
     
-    answer = st.radio("Select one option:", options)
-   
-    """
-    #st.write(f"{llm_response["A"]} \n{llm_response["B"]}\n{llm_response["C"]}\n{llm_response["D"]}  ")
-    st.write(f"A: {llm_response['A']} \n B: {llm_response['B']} \n C: {llm_response['C']} \n D: {llm_response['D']}")
-    #st.write(f"B:  {llm_response["B"]}")   
-    """ 
+    answer = st.radio("Select one option:", options, index=None)
+
+if st.button("Submit Answer"):
+    if answer==llm_response["Correct_Ans"]:
+        st.success(f"✅ You selected: {answer}")
+    else:
+        st.warning("⚠️ Please select an option before submitting.")
