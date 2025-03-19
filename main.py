@@ -79,3 +79,4 @@ if st.button("Submit Answer"):
          st.success(f"✅ Correct! You selected: {st.session_state.selected_answer}")
     else:
         st.error(f"❌ Incorrect! The correct answer is {st.session_state.llm_response['Correct_Ans']}.")
+        st.write(f"\nExplanation to solve the problem : \n {llm_response['Explanation']} ") 
