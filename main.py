@@ -32,8 +32,8 @@ structured_llm = llm.with_structured_output(Math_QA)
 st.header(" Math Exercise ")
 st.subheader(" Generate Math Exercise for practice 🤖 ")
 
-Continue = "True" 
-while Continue == "True":
+#Continue = "True" 
+#while Continue == "True":
     Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Percentage", "LCM", "HCF", "Division", "Long Division"])
     #st.write("You selected:", Math_topic)
     
@@ -80,8 +80,9 @@ while Continue == "True":
         else:
             st.error(f"❌ Incorrect! The correct answer is {st.session_state.llm_response['Correct_Ans']}.")
             st.write(f"\nExplanation to solve the problem : \n {llm_response['Explanation']} ") 
-    
+    """
     if st.button("Next Question"):
         Continue = "True"
     if st.button("Finish"):
         Continue = "False"
+"""
