@@ -79,16 +79,18 @@ if st.session_state.llm_response:
     )
 
 # Submit answer button
-st.write(st.session_state.selected_answer)
-st.write(st.session_state.llm_response['Correct_Ans'])
-#st.write(answer_radio)
+#st.write(st.session_state.selected_answer)
+#st.write(st.session_state.llm_response['Correct_Ans'])
+st.write(llm_response['Correct_Ans'])
+st.write(st.session_state.answer_radio.split(")")[0])
 
 if st.button("Submit Answer"):
     if not st.session_state.llm_response:
         st.warning("⚠️ Please generate a question first!")
     elif st.session_state.selected_answer is None:
         st.warning("⚠️ Please select an option before submitting.")
-    elif st.session_state.selected_answer == f"{st.session_state.llm_response['Correct_Ans']}":
+    elif st.session_state.answer_radio.split(")")[0] == llm_response['Correct_Ans']:
+    #elif st.session_state.selected_answer == f"{st.session_state.llm_response['Correct_Ans']}":
         st.success(f"✅ Correct! You selected: {st.session_state.selected_answer}")
     else:
         st.error(f"❌ Incorrect! The correct answer is {st.session_state.llm_response['Correct_Ans']}.")
