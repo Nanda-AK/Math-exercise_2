@@ -77,6 +77,7 @@ if st.button("Submit Answer"):
         st.warning("⚠️ Please select an option before submitting.")
     elif st.session_state.answer_radio.split(")")[0] == llm_response['Correct_Ans']:
          st.success(f"✅ Correct! You selected: {st.session_state.selected_answer}")
+         st.write(f"\nExplanation to solve the problem : \n {llm_response['Explanation']} ")
     else:
         st.error(f"❌ Incorrect! The correct answer is {st.session_state.llm_response['Correct_Ans']}.")
         st.write(f"\nExplanation to solve the problem : \n {llm_response['Explanation']} ") 
