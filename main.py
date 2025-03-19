@@ -52,5 +52,5 @@ if st.button("Generate"):
     #st.write(Math_Q.content)
     llm_response = structured_llm.invoke("Provide a math percentage Problem")
     st.write(llm_response["Question"])
-    st.write(f"A:  {llm_response["A"]}")
-    st.write(f"B:  {llm_response["B"]}")   
+    st.write(f"{llm_response["A"]} \n{llm_response["B"]}\n{llm_response["C"]}\n{llm_response["D"]}  ")
+    #st.write(f"B:  {llm_response["B"]}")   
