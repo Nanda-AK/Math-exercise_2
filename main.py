@@ -68,7 +68,7 @@ if st.session_state.llm_response:
         "Select one option:", options, index=None, key="answer_radio"
     )
     
-print(structured_llm.content)
+print(structured_llm)
 
 if st.button("Submit Answer"):
     if not st.session_state.llm_response:
