@@ -27,7 +27,7 @@ class Math_QA(TypedDict):
 
 structured_llm = llm.with_structured_output(Math_QA)
 
-
+print(structured_llm)
 
 ### Streamlit ###
 
