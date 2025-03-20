@@ -10,8 +10,8 @@ os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 #Initiation the LLM Model 
-#llm = init_chat_model("gemini-2.0-flash-lite", model_provider="google")
-llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash-lite") 
+llm = init_chat_model("gemini-2.0-flash-lite", model_provider="google")
+#llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash-lite") 
 
 # TypedDict
 class Math_QA(TypedDict):
