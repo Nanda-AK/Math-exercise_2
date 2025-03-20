@@ -23,6 +23,7 @@ class Math_QA(TypedDict):
     C: Annotated[str,..., "Provide Option C Answer"]
     D: Annotated[str,..., "Provide Option D Answer"]
     Correct_Ans: Annotated[str,...,"Answer amound A, B, C, D"]
+    selected_option = st.session_state.selected_answer.split(")")[0].strip()
     Explanation: Annotated[str, ..., "Explain the answer in Kids frindly and easy way"]
 
 structured_llm = llm.with_structured_output(Math_QA)
@@ -48,7 +49,15 @@ if "selected_answer" not in st.session_state:
 # Generate question when button is clicked
 if st.button(f"Generate {Math_topic} Math Problem"):
     #st.session_state.llm_response = structured_llm.invoke(f"Provide a math {Math_topic} Problem and provide simple step by step explanation to solve problem. Keep the question Indian regional centre")
-    st.session_state.llm_response = structured_llm.invoke(f"Generate a well-structured and mistake-free math problem on {Math_topic} for a 6th-grade student. The problem should be clear, realistic, and engaging. Ensure that the numbers used lead to a straightforward solution without rounding errors. Also, provide four multiple-choice options, with one correct answer and three incorrect but reasonable distractors. Finally, show the step-by-step solution to verify accuracy.")
+    #st.session_state.llm_response = structured_llm.invoke(f"Generate a well-structured and mistake-free math problem on {Math_topic} for a 6th-grade student. The problem should be clear, realistic, and engaging. Ensure that the numbers used lead to a straightforward solution without rounding errors. Also, provide four multiple-choice options, with one correct answer and three incorrect but reasonable distractors. Finally, show the step-by-step solution to verify accuracy.")
+    st.session_state.llm_response = structured_llm.invoke(
+    f"""Generate a well-structured and mistake-free math problem on {Math_topic} for a 6th-grade student. 
+    - Ensure that the problem is realistic and the solution does not have rounding errors.  
+    - Provide **four multiple-choice options** with exactly **one correct answer** and **three incorrect but reasonable distractors**.  
+    - Double-check the **correct answer** with calculations before finalizing the output.  
+    - Show a detailed, step-by-step explanation.  
+    - Return data in the expected structured format."""
+    )
     
 # Display the question and answer choices if a question has been generated
 if st.session_state.llm_response:
@@ -71,14 +80,18 @@ if st.session_state.llm_response:
 print(structured_llm)
 
 if st.button("Submit Answer"):
+    required_keys = ["Question", "A", "B", "C", "D", "Correct_Ans", "Explanation"]
+    if not all(key in llm_response for key in required_keys):
+        st.error("🚨 LLM response is missing required fields! Please regenerate the question.")
     if not st.session_state.llm_response:
         st.warning("⚠️ Please generate a question first!")
     elif st.session_state.selected_answer is None:
         st.warning("⚠️ Please select an option before submitting.")
-    elif st.session_state.answer_radio.split(")")[0] == llm_response['Correct_Ans']:
+    elif selected_option == llm_response["Correct_Ans"]:
         st.success(f"✅ Correct! You selected: {st.session_state.selected_answer}")
         st.write(f"\nExplanation to solve the problem : \n {llm_response['Explanation']} ")
     else:
         st.error(f"❌ Incorrect! The correct answer is {st.session_state.llm_response['Correct_Ans']}.")
         st.write(f"\nExplanation to solve the problem : \n {llm_response['Explanation']} ") 
     
+st.write("DEBUGGING OUTPUT:", llm_response)
