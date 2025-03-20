@@ -27,7 +27,7 @@ class Math_QA(TypedDict):
 
 structured_llm = llm.with_structured_output(Math_QA)
 
-print(structured_llm)
+
 
 ### Streamlit ###
 
@@ -68,7 +68,8 @@ if st.session_state.llm_response:
         "Select one option:", options, index=None, key="answer_radio"
     )
     
-    
+print(structured_llm.response)
+
 if st.button("Submit Answer"):
     if not st.session_state.llm_response:
         st.warning("⚠️ Please generate a question first!")
