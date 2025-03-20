@@ -23,7 +23,7 @@ class Math_QA(TypedDict):
     C: Annotated[str,..., "Provide Option C Answer"]
     D: Annotated[str,..., "Provide Option D Answer"]
     Correct_Ans: Annotated[str,...,"Answer amound A, B, C, D"]
-    selected_option = st.session_state.selected_answer.split(")")[0].strip()
+    
     Explanation: Annotated[str, ..., "Explain the answer in Kids frindly and easy way"]
 
 structured_llm = llm.with_structured_output(Math_QA)
@@ -81,6 +81,7 @@ print(structured_llm)
 
 if st.button("Submit Answer"):
     required_keys = ["Question", "A", "B", "C", "D", "Correct_Ans", "Explanation"]
+    selected_option = st.session_state.selected_answer.split(")")[0].strip()
     if not all(key in llm_response for key in required_keys):
         st.error("🚨 LLM response is missing required fields! Please regenerate the question.")
     if not st.session_state.llm_response:
