@@ -51,7 +51,8 @@ if st.button(f"Generate {Math_topic} Math Problem"):
     #st.session_state.llm_response = structured_llm.invoke(f"Provide a math {Math_topic} Problem and provide simple step by step explanation to solve problem. Keep the question Indian regional centre")
     #st.session_state.llm_response = structured_llm.invoke(f"Generate a well-structured and mistake-free math problem on {Math_topic} for a 6th-grade student. The problem should be clear, realistic, and engaging. Ensure that the numbers used lead to a straightforward solution without rounding errors. Also, provide four multiple-choice options, with one correct answer and three incorrect but reasonable distractors. Finally, show the step-by-step solution to verify accuracy.")
     st.session_state.llm_response = structured_llm.invoke(
-    f"""Generate a well-structured and mistake-free math problem on {Math_topic} for a 6th-grade student. 
+    f"""- Role: Math Teacher
+    Generate a well-structured and mistake-free math problem on {Math_topic} for a 6th-grade student. 
     - Ensure that the problem is realistic and the solution does not have rounding errors.  
     - Provide **four multiple-choice options** with exactly **one correct answer** and **three incorrect but reasonable distractors**.  
     - Double-check the **correct answer** with calculations before finalizing the output.  
