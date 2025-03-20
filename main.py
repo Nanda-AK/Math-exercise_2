@@ -78,8 +78,11 @@ if st.session_state.llm_response:
     st.session_state.selected_answer = st.radio(
         "Select one option:", options, index=None, key="answer_radio"
     )
-    
-st.write(llm_response)
+
+st.write(llm_response["Question"])
+st.write(llm_response["A"])
+st.write(llm_response["Correct_Ans"])
+st.write(llm_response["Explanation"])
 
 if st.button("Submit Answer"):
     required_keys = ["Question", "A", "B", "C", "D", "Correct_Ans", "Explanation"]
