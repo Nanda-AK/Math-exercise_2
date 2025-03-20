@@ -27,7 +27,7 @@ class Math_QA(TypedDict):
     Explanation: Annotated[str, ..., "Explain the answer in Kids frindly and easy way"]
 
 structured_llm = llm.with_structured_output(Math_QA)
-
+st.write(structured_llm)
 
 
 ### Streamlit ###
