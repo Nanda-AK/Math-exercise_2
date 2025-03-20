@@ -79,7 +79,7 @@ if st.session_state.llm_response:
         "Select one option:", options, index=None, key="answer_radio"
     )
     
-st.write(structured_llm)
+st.write(llm_response)
 
 if st.button("Submit Answer"):
     required_keys = ["Question", "A", "B", "C", "D", "Correct_Ans", "Explanation"]
