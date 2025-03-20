@@ -17,7 +17,7 @@ llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash-lite")
 class Math_QA(TypedDict):
     """Math problem for Grade 6th student"""
 
-    Question: Annotated[str, ..., "Simple Math question on persentage problem"]
+    Question: Annotated[str, ..., "Math Question"]
     A: Annotated[str,..., "Provide Option A answer"]
     B: Annotated[str,..., "Provide Option B Answer"]
     C: Annotated[str,..., "Provide Option C Answer"]
