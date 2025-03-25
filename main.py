@@ -17,8 +17,6 @@ llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-new-math-llm-json09
 
 
 
-
-
 ### Streamlit ###
 
 st.header(" Math Exercise ")
@@ -29,7 +27,7 @@ Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Perce
 
 messages = [
     {"role": "system", "content": "You are an AI tutor generating multiple-choice math questions with step-by-step explanations."},
-    {"role": "user", "content": "Generate a math question involving division for 4th grade with Challenge level moderate."}
+    {"role": "user", "content": f"Generate a math question involving {Math_topic} for 6th grade with Challenge level moderate."}
 ]
 
 #============================
