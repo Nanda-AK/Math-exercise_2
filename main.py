@@ -24,7 +24,13 @@ st.subheader(" Generate Math Exercise for practice 🤖 ")
 
 
 Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Percentage", "LCM", "HCF", "Division", "Long Division"])    
-    
+
+messages = [
+    {"role": "system", "content": "You are an AI tutor generating multiple-choice math questions with clear explanations."},
+    {"role": "user", "content": "Generate a math question involving addition math for 3rd grade with Challenge level easy?"},
+    {"role": "assistant", "content": "{\"Question\": \"John has 5 apples. He gives 2 to his friend and then buys 4 more. How many apples does he have now?\", \"Choices\": {\"A\": \"5\", \"B\": \"6\", \"C\": \"7\", \"D\": \"8\"}, \"Answer\": \"C\", \"Explanation\": \"John starts with 5 apples, gives away 2, and then gets 4 more: 5 - 2 + 4 = 7.\"}"}
+]
+
 #============================
     
 # Initialize session state variables if they don't exist
@@ -35,9 +41,5 @@ if "selected_answer" not in st.session_state:
     
 # Generate question when button is clicked
 if st.button(f"Generate {Math_topic} Math Problem"):
-    st.session_state.llm_response = llm.invoke("Generate Word percentage Math problem with easy question for grade 10 student? response in json format")
+    st.session_state.llm_response = llm.invoke(messages)
     st.write(st.session_state.llm_response.content)
-    #st.write(st.session_state.llm_response["Question"])
-    #st.write(st.session_state.llm_response["Choices"]["A"])
-    #st.write(st.session_state.llm_response["Answer"])
-    #st.write(st.session_state.llm_response["Explanation"])
