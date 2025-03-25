@@ -11,7 +11,8 @@ os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 #Initiation the LLM Model 
-llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-math-llm:BEvcGaoy", model_provider="openai")
+#llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-math-llm:BEvcGaoy", model_provider="openai")
+llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-new-math-llm-json0915:BF0ptGAy", model_provider="openai")
 #llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash-lite") 
 
 
@@ -27,12 +28,8 @@ st.subheader(" Generate Math Exercise for practice 🤖 ")
 Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Percentage", "LCM", "HCF", "Division", "Long Division"])    
 
 messages = [
-    {"role": "system", "content": "You are an AI tutor generating multiple-choice math questions with clear explanations."},
-    {"role": "user", "content": "Generate a math question involving algebra math for 7th grade with Challenge level easy?"},
-    #{"role": "system", "content": "You are an AI tutor generating multiple-choice math questions with clear explanations."},
-    #{"role": "user", "content": "Generate a math question involving addition math for 3rd grade with Challenge level easy?"},
-    #{"role": "assistant", "content": "{\"Question\": \"John has 5 apples. He gives 2 to his friend and then buys 4 more. How many apples does he have now?\", \"Choices\": {\"A\": \"5\", \"B\": \"6\", \"C\": \"7\", \"D\": \"8\"}, \"Answer\": \"C\", \"Explanation\": \"John starts with 5 apples, gives away 2, and then gets 4 more: 5 - 2 + 4 = 7.\"}"}
-    {"Explanation": "Solve the given algebraic equation step by step. Clearly show each transformation applied, explain the logic behind each step, and provide the final answer in a structured format. Use proper mathematical notation where needed."}
+    {"role": "system", "content": "You are an AI tutor generating multiple-choice math questions with step-by-step explanations."},
+    {"role": "user", "content": "Generate a math question involving HCF for 6th grade with Challenge level moderate."}
 ]
 
 #============================
