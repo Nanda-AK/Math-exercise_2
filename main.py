@@ -1,4 +1,4 @@
-from langchain.chat_models import init_chat_model
+yfrom langchain.chat_models import init_chat_model
 from langchain_google_genai import ChatGoogleGenerativeAI
 import streamlit as st
 import os
@@ -35,7 +35,7 @@ if "selected_answer" not in st.session_state:
     
 # Generate question when button is clicked
 if st.button(f"Generate {Math_topic} Math Problem"):
-    st.session_state.llm_response = llm.invoke("Generate Word percentage Math problem with difficult question for grade 10 student? response in json format")
+    st.session_state.llm_response = llm.invoke("Generate Word percentage Math problem with easy question for grade 10 student? response in json format")
     st.write(st.session_state.llm_response.content)
     #st.write(st.session_state.llm_response["Question"])
     #st.write(st.session_state.llm_response["Choices"]["A"])
