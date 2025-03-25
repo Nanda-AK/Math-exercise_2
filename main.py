@@ -31,7 +31,7 @@ messages = [
     {"role": "user", "content": "Generate a math question involving algebra math for 7th grade with Challenge level easy?"},
     #{"role": "system", "content": "You are an AI tutor generating multiple-choice math questions with clear explanations."},
     #{"role": "user", "content": "Generate a math question involving addition math for 3rd grade with Challenge level easy?"},
-    {"role": "assistant", "content": "{\"Question\": \"John has 5 apples. He gives 2 to his friend and then buys 4 more. How many apples does he have now?\", \"Choices\": {\"A\": \"5\", \"B\": \"6\", \"C\": \"7\", \"D\": \"8\"}, \"Answer\": \"C\", \"Explanation\": \"John starts with 5 apples, gives away 2, and then gets 4 more: 5 - 2 + 4 = 7.\"}"}
+    #{"role": "assistant", "content": "{\"Question\": \"John has 5 apples. He gives 2 to his friend and then buys 4 more. How many apples does he have now?\", \"Choices\": {\"A\": \"5\", \"B\": \"6\", \"C\": \"7\", \"D\": \"8\"}, \"Answer\": \"C\", \"Explanation\": \"John starts with 5 apples, gives away 2, and then gets 4 more: 5 - 2 + 4 = 7.\"}"}
 ]
 
 #============================
