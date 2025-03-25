@@ -29,7 +29,7 @@ Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Perce
 
 messages = [
     {"role": "system", "content": "You are an AI tutor generating multiple-choice math questions with step-by-step explanations."},
-    {"role": "user", "content": "Generate a math question involving division for 4th grade with Challenge level moderate."}
+    {"role": "user", "content": "Generate a math question involving long addition for 3rd grade with Challenge level moderate."}
 ]
 
 #============================
