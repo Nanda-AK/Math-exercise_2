@@ -32,6 +32,7 @@ messages = [
     #{"role": "system", "content": "You are an AI tutor generating multiple-choice math questions with clear explanations."},
     #{"role": "user", "content": "Generate a math question involving addition math for 3rd grade with Challenge level easy?"},
     #{"role": "assistant", "content": "{\"Question\": \"John has 5 apples. He gives 2 to his friend and then buys 4 more. How many apples does he have now?\", \"Choices\": {\"A\": \"5\", \"B\": \"6\", \"C\": \"7\", \"D\": \"8\"}, \"Answer\": \"C\", \"Explanation\": \"John starts with 5 apples, gives away 2, and then gets 4 more: 5 - 2 + 4 = 7.\"}"}
+    {"Explanation": "Solve the given algebraic equation step by step. Clearly show each transformation applied, explain the logic behind each step, and provide the final answer in a structured format. Use proper mathematical notation where needed."}
 ]
 
 #============================
