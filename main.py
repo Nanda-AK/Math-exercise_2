@@ -44,4 +44,4 @@ if st.button(f"Generate {Math_topic} Math Problem"):
     st.session_state.llm_response = llm.invoke(messages)
     st.write(st.session_state.llm_response.content)
     st.write("*"*50)
-    st.write(st.session_state.llm_response.content["Question"]
+    st.write(st.session_state.llm_response.content["Question"])
