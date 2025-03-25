@@ -23,7 +23,7 @@ st.header(" Math Exercise ")
 st.subheader(" Generate Math Exercise for practice 🤖 ")
 
 
-Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["Percentage", "LCM", "HCF", "Division", "Long Division"])    
+Math_topic = st.selectbox("Choose a Math topic for today's Exercise : ", ["LCM", "HCF", "Percentage", "Fractions", "Decimals", "Division", "Multiples", "Long addition", "Long subtraction", "Long multiples", "Long division"])    
 
 messages = [
     {"role": "system", "content": "You are an AI tutor generating multiple-choice math questions with step-by-step explanations."},
