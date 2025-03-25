@@ -48,3 +48,13 @@ if st.button(f"Generate {Math_topic} Math Problem"):
     st.write(st.session_state.response_dict) 
     st.write("*"*50)
     st.write(st.session_state.response_dict["Question"])
+    st.write("*"*50)
+    st.write(st.session_state.response_dict["Choices"]["A"])
+    st.write("*"*50)
+    st.write(st.session_state.response_dict["Choices"]["B"])
+    st.write("*"*50)
+    st.write(st.session_state.response_dict["Answer"])
+    st.write("*"*50)
+    st.write(st.session_state.response_dict["Explanation"])
+    st.write("*"*50)
+    
