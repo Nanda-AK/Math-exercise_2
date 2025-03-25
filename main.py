@@ -36,7 +36,8 @@ if "selected_answer" not in st.session_state:
 # Generate question when button is clicked
 if st.button(f"Generate {Math_topic} Math Problem"):
     st.session_state.llm_response = llm.invoke("Generate Addition Math question with easy difficulty for grade 1 student?")
-    st.write(st.session_state.llm_response["Question"])
-    st.write(st.session_state.llm_response["Choices"]["A"])
-    st.write(st.session_state.llm_response["Answer"])
-    st.write(st.session_state.llm_response["Explanation"])
+    st.write(st.session_state.llm_response)
+    #st.write(st.session_state.llm_response["Question"])
+    #st.write(st.session_state.llm_response["Choices"]["A"])
+    #st.write(st.session_state.llm_response["Answer"])
+    #st.write(st.session_state.llm_response["Explanation"])
