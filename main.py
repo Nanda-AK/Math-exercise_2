@@ -43,7 +43,8 @@ if st.button(f"Generate {Math_topic} Math Problem"):
     st.session_state.llm_response = llm.invoke(messages)
     st.write(st.session_state.llm_response.content)
     st.write(type(st.session_state.llm_response.content))
-    st.session_state.response_dict = json.loads(st.session_state.llm_response.content)
+    st.session_state.response_dict = st.session_state.llm_response.content
+    #st.session_state.response_dict = json.loads(st.session_state.llm_response.content)
     #st.write(st.session_state.llm_response.content)
     st.write(st.session_state.response_dict) 
     st.write("*"*50)
