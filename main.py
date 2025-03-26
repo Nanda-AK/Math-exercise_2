@@ -1,5 +1,5 @@
 from langchain.chat_models import init_chat_model
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 import streamlit as st
 import os
 import json
@@ -42,6 +42,7 @@ if "selected_answer" not in st.session_state:
 if st.button(f"Generate {Math_topic} Math Problem"):
     st.session_state.llm_response = llm.invoke(messages)
     st.write(st.session_state.llm_response.content)
+    st.write(type(st.session_state.llm_response.content))
     st.session_state.response_dict = json.loads(st.session_state.llm_response.content)
     #st.write(st.session_state.llm_response.content)
     st.write(st.session_state.response_dict) 
