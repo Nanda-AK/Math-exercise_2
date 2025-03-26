@@ -12,7 +12,8 @@ os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 #Initiation the LLM Model 
 #llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-math-llm:BEvcGaoy", model_provider="openai")
-llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-new-math-llm-json0915:BF0ptGAy", model_provider="openai")
+#llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-new-math-llm-json0915:BF0ptGAy", model_provider="openai")
+llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-math-llm-26th-1st:BFD9gRWW", model_provider="openai")
 #llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash-lite") 
 
 
@@ -45,8 +46,7 @@ if st.button(f"Generate {Math_topic} Math Problem"):
     st.write(type(st.session_state.llm_response.content))
     st.session_state.response_dict = st.session_state.llm_response.content
     #st.session_state.response_dict = json.loads(st.session_state.llm_response.content)
-    #st.write(st.session_state.llm_response.content)
-    st.write(type(st.session_state.response_dict))
+    st.write(st.session_state.llm_response.content)
     st.write("*"*50)
     st.write(st.session_state.response_dict["Question"])
     st.write("*"*50)
