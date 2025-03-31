@@ -11,15 +11,10 @@ os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 #Initiation the LLM Model 
-#llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-math-llm:BEvcGaoy", model_provider="openai")
-#llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-new-math-llm-json0915:BF0ptGAy", model_provider="openai")
 llm = init_chat_model("ft:gpt-4o-mini-2024-07-18:personal:my-math-llm-26th-1st:BFD9gRWW", model_provider="openai")
-#llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash-lite") 
-
 
 
 ### Streamlit ###
-
 st.header(" Math Exercise ")
 st.subheader(" Generate Math Exercise for practice 🤖 ")
 
