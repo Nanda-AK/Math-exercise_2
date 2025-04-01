@@ -48,11 +48,11 @@ if st.button(f"Generate {Math_topic} Math Problem"):
     options = [st.session_state.response_dict["Choices"]["A"], st.session_state.response_dict["Choices"]["D"], st.session_state.response_dict["Choices"]["C"], st.session_state.response_dict["Choices"]["D"]]
     choice = st.radio("Select an option:", options)
 
-        #Button after selecting the Answer 
-        if st.button(f"Select a Answer"):
-            # Display user selection
-            st.write(f"✅ You selected: **{choice}**")
+    #Button after selecting the Answer 
+    if st.button(f"Select a Answer"):
+        # Display user selection
+        st.write(f"✅ You selected: **{choice}**")
    
-            #Button to move to next question. 
-            if st.button(f"Click to Generate next Question"):
-                st.write("Moveing to next Question")
+        #Button to move to next question. 
+        if st.button(f"Click to Generate next Question"):
+            st.write("Moveing to next Question")
