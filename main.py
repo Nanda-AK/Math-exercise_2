@@ -54,4 +54,4 @@ if st.button(f"Generate {Math_topic} Math Problem"):
    
 #Button to move to next question. 
 if st.button(f"Click to Generate next Question"):
-    st.write("Moveing to next Question)
+    st.write("Moveing to next Question")
