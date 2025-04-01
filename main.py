@@ -1,4 +1,4 @@
-from langchain.chat_models import init_chat_model
+cfrom langchain.chat_models import init_chat_model
 from langchain_openai import ChatOpenAI
 import streamlit as st
 import os
@@ -43,7 +43,7 @@ if st.button(f"Generate {Math_topic} Math Problem"):
     st.session_state.response_dict = json.loads(st.session_state.llm_response.content)
     
     st.write(st.session_state.response_dict["Question"])
-    if st.button(f"Generate {Math_topic} Math Problem"):
+    if st.button(f"Select a Answer"):
         options = [st.session_state.response_dict["Choices"]["A"], st.session_state.response_dict["Choices"]["D"], st.session_state.response_dict["Choices"]["C"], st.session_state.response_dict["Choices"]["D"]]
         choice = st.radio("Select an option:", options)
     
