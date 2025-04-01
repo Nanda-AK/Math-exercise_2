@@ -41,10 +41,13 @@ if st.button(f"Generate {Math_topic} Math Problem"):
     #st.write(type(st.session_state.llm_response.content))
     #st.session_state.response_dict = st.session_state.llm_response.content
     st.session_state.response_dict = json.loads(st.session_state.llm_response.content)
+    #Display the Question 
+    st.write(st.session_state.response_dict["Question"])
+    #Display the Choices 
     options = [st.session_state.response_dict["Choices"]["A"], st.session_state.response_dict["Choices"]["D"], st.session_state.response_dict["Choices"]["C"], st.session_state.response_dict["Choices"]["D"]]
     choice = st.radio("Select an option:", options)
-    
-    st.write(st.session_state.response_dict["Question"])
+
+    #Button after selecting the Answer 
     if st.button(f"Select a Answer"):
         # Display user selection
         st.write(f"✅ You selected: **{choice}**")
