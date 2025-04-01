@@ -47,8 +47,8 @@ if st.button(f"Generate {Math_topic} Math Problem"):
         options = [st.session_state.response_dict["Choices"]["A"], st.session_state.response_dict["Choices"]["D"], st.session_state.response_dict["Choices"]["C"], st.session_state.response_dict["Choices"]["D"]]
         choice = st.radio("Select an option:", options)
     
-# Display user selection
-st.write(f"✅ You selected: **{choice}**")
+        # Display user selection
+        st.write(f"✅ You selected: **{choice}**")
    
     
     
