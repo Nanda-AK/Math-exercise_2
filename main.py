@@ -52,6 +52,6 @@ if st.button(f"Generate {Math_topic} Math Problem"):
         # Display user selection
         st.write(f"✅ You selected: **{choice}**")
    
-#Button to move to next question. 
-if st.button(f"Click to Generate next Question"):
-    st.write("Moveing to next Question")
+    #Button to move to next question. 
+    if st.button(f"Click to Generate next Question"):
+        st.write("Moveing to next Question")
