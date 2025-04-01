@@ -5,6 +5,7 @@ import os
 import json
 
 from typing_extensions import Annotated, TypedDict
+choice = ""
 
 # Importing API Key 
 os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
